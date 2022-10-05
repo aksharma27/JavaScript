@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <p>sum of 2 numbers using callback</p>
+
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(something) {
+            document.getElementById("demo").innerHTML = something;
+        }
+
+        function myCalculator(n1, n2, callBack) {
+            let sum = n1 + n2;
+            callBack(sum);
+        }
+
+        myCalculator(5, 5, myDisplayer);
+    </script>
+</body>
+
+</html>
