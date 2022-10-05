@@ -1,0 +1,24 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>value insice async function arg</title>
+</head>
+
+<body>
+
+    <p>wait for 3 seconds</p>
+    <h1 id="demo"></h1>
+    <script>
+        setTimeout(function () { myyFunction("I love you!"); }, 3000);
+
+        function myyFunction(value) {
+            document.getElementById("demo").innerHTML = value;
+        }
+    </script>
+
+</body>
+
+</html>
