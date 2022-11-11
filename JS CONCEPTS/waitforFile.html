@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks, wait for a file</title>
+</head>
+
+<body>
+    <h3>wait for a file</h3>
+    <p id="demo"></p>
+
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+
+        function getFile(myCallback) {
+            let req = new XMLHttpRequest();
+            req.open("GET", "callBack2.html");
+            req.onload = function () {
+                if (req.status === 200) {
+                    myCallback(this.responseText);
+                }
+                else {
+                    myCallback("error: " + req.status);
+                }
+            }
+            req.send();
+        }
+
+        getFile(myDisplayer);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Events</title>
+</head>
+
+<body>
+    <h1 id="head">today's date:</h1>
+    <h2>JS dom events</h2>
+    <h3 onclick="changeText(this)">This text will change on clicking.</h3>
+
+    <script>
+        function changeText(id) {
+            id.innerHTML = "OOps";
+        }
+
+        function changeHeading() {
+            document.getElementById("head").onclick = displayDate;
+        }
+
+        function displayDate() {
+            document.getElementById("head").innerHTML = Date();
+        }
+    </script>
+</body>
+
+</html>
